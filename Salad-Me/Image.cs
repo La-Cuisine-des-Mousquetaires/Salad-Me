@@ -46,5 +46,34 @@ namespace Salad_Me
                 return (true);
             return (false);
         }
+
+        public int getNecrose()
+        {
+            int g;
+            int n;
+            int y;
+            int x;
+
+            g = 0;
+            n = 0;
+            y = 0;
+
+            while (y < this.img.Height)
+            {
+                x = 0;
+                while (x < this.img.Width)
+                {
+                    Color pix = new Color(this.img.GetPixel(x, y));
+                    if ((int)(pix.R) + (int)(pix.B - 20) < (int)pix.G)
+                        g++;
+                    else if ((pix.R < 50 && pix.B < 50 && pix.G < 50))
+                        n++;
+                    x++;
+                }
+                y++;
+            }
+
+            return (100 * n / (n + g));
+        }
     }
 }
