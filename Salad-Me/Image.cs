@@ -15,7 +15,7 @@ namespace Salad_Me
             this.img = img;
         }
 
-        public bool isGreen()
+        public int getWhite()
         {
             int g;
             int w;
@@ -41,10 +41,7 @@ namespace Salad_Me
                 y++;
             }
 
-
-            if (g > w)
-                return (true);
-            return (false);
+            return (w * 100 / (w + g));
         }
 
         public int getNecrose()
