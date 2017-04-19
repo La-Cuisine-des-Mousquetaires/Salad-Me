@@ -29,10 +29,7 @@ namespace Salad_Me
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)(data.Extras.Get("data"));
             Image img = new Image(bitmap);
-            if (img.isGreen())
-                editText.Text = "C'est vert !";
-            else
-                editText.Text = "Ce n'est pas vert !";
+            editText.Text = "Contient : " + img.getWhite().ToString() + "% de blanc !";
         }
 
         private void BtnCameraClik(object sender, EventArgs e)
