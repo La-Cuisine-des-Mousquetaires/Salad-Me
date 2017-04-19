@@ -66,7 +66,7 @@ namespace Salad_Me
                     Color pix = new Color(this.img.GetPixel(x, y));
                     if ((int)(pix.R) + (int)(pix.B - 20) < (int)pix.G)
                         g++;
-                    else if ((pix.R < 50 && pix.B < 50 && pix.G < 50))
+                    else if ((pix.R < 20 && pix.B < 20 && pix.G < 20))
                         n++;
                     x++;
                 }
