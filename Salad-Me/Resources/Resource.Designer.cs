@@ -57,6 +57,28 @@ namespace Salad_Me
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f050002
+			public const int btnCamera = 2131034114;
+			
+			// aapt resource value: 0x7f050001
+			public const int imageView = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int imgView = 2131034112;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
