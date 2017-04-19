@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/imgView">
-    <ImageView
-        android:layout_weight="9"
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageView" />
+        android:layout_height="157.0dp"
+        android:id="@+id/editText" />
     <Button
         android:text="Open Camera"
         android:layout_width="match_parent"

@@ -12,14 +12,14 @@ namespace Salad_Me
     [Activity(Label = "Salad_Me", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        ImageView imageView;
+        EditText editText;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Main);
 
             Button btnCamera = FindViewById<Button>(Resource.Id.btnCamera);
-            imageView = FindViewById<ImageView>(Resource.Id.imageView);
+            editText = FindViewById<EditText>(Resource.Id.editText);
 
             btnCamera.Click += BtnCameraClik;
         }
@@ -29,9 +29,10 @@ namespace Salad_Me
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)(data.Extras.Get("data"));
             Image img = new Image(bitmap);
-
-            //img.isGreen();
-
+            if (img.isGreen())
+                editText.Text = "C'est vert !";
+            else
+                editText.Text = "Ce n'est pas vert !";
         }
 
         private void BtnCameraClik(object sender, EventArgs e)
