@@ -28,8 +28,12 @@ namespace Salad_Me
         {
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)(data.Extras.Get("data"));
-            imageView.SetImageBitmap(bitmap);
+            Image img = new Image(bitmap);
+
+            //img.isGreen();
+
         }
+
         private void BtnCameraClik(object sender, EventArgs e)
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
