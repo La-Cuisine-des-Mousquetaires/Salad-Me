@@ -5,11 +5,14 @@ using Android.Widget;
 using Android.OS;
 using Android.Runtime;
 using Android.Graphics;
+using Android.Nfc;
 using System;
 using System.Net;
 using System.Json;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text;
+using Android.Nfc.Tech;
 
 namespace Salad_Me
 {
@@ -30,6 +33,7 @@ namespace Salad_Me
             necText = FindViewById<TextView>(Resource.Id.necText);
             netBtn = FindViewById<Button>(Resource.Id.netButton);
             nfcBtn = FindViewById<Button>(Resource.Id.nfcButton);
+            NfcAdapter.GetDefaultAdapter(this);
             btnCamera.Click += BtnCameraClik;
             netBtn.Click += (sender, e) => {
                 string url = "https://salad-me.firebaseio.com/vegetablesData.json";
@@ -49,7 +53,6 @@ namespace Salad_Me
             whiteText.Text = img.getWhite().ToString();
             necText.Text = img.getNecrose().ToString();
             netBtn.Enabled = true;
-            nfcBtn.Enabled = true;
         }
 
         private void FetchResults(string url, Image img)
