@@ -50,8 +50,8 @@ namespace Salad_Me
             base.OnActivityResult(requestCode, resultCode, data);
             Bitmap bitmap = (Bitmap)(data.Extras.Get("data"));
             img = new Image(bitmap);
-            whiteText.Text = img.getWhite().ToString();
-            necText.Text = img.getNecrose().ToString();
+            whiteText.Text = img.getWhite().ToString() + "%";
+            necText.Text = img.getNecrose().ToString() + "%";
             netBtn.Enabled = true;
         }
 
